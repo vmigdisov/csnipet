@@ -31,6 +31,7 @@ int main(int argc, char *argv[]) {
 	int *result = traverse(order, method, &root, &size);
 	for (int i = 0; i < size ; i++) printf("%d ", result[i]);
 	printf("\n");
+	free(result);
 	return 0;
 }
 
