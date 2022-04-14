@@ -4,8 +4,7 @@
 
 struct tree_node {
 	int val;
-	struct tree_node *left;
-	struct tree_node *right;
+	struct tree_node *left, *right;
 };
 
 enum { ITERACTION, RECURSION };
@@ -76,7 +75,7 @@ int *traverse(int order, int method, struct tree_node *root, int *size) {
 			return 0;
 		}
 	} else if (method == RECURSION) {
-		recursion(PREORDER, root, size, arr);
+		recursion(order, root, size, arr);
 	}
 	int *result = malloc(*size * sizeof *result);
 	for (int i = 0; i < *size; i++) result[i] = arr[i];
